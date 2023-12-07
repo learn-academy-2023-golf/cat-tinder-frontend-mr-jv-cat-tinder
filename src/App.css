@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: #282c34;
+  padding:10px;
+  color: gray
+}
+
+.footer {
+  background-color: antiquewhite;
+  color: gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.notfoundstyling {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.notfoundstyling h1 {
+  color: gray;
+}
