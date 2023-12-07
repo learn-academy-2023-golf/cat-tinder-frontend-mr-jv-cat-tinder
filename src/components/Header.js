@@ -1,21 +1,24 @@
 import React from 'react'
-import {Nav, NavItem, NavLink} from 'reactstrap'
+import {Nav, NavItem } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
     <>
-      <Nav className='navbar'>
+      <Nav justified className='navbar'>
         <NavItem>
-          <NavLink
-            active
-            href="#"
-          >
-            Link
+          <NavLink to="/">
+            Home
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">
-            Another Link
+          <NavLink to="/pigeonindex">
+            See all lovebirds
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/pigeonnew">
+            Create a lovebird
           </NavLink>
         </NavItem>
       </Nav>
