@@ -21,9 +21,9 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pigeonindex" element={<PigeonIndex />} />
+        <Route path="/pigeonindex" element={<PigeonIndex pigeons={pigeons} />} />
         <Route path="/pigeonnew" element={<PigeonNew />} />
-        <Route path="/pigeonshow" element={<PigeonShow />} />
+        <Route path="/pigeonshow/:id" element={<PigeonShow pigeons={pigeons} />} />
         <Route path="/pigeonedit" element={<PigeonEdit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
