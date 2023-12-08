@@ -14,6 +14,11 @@ import mockPigeons from './mockPigeons'
 const App = () => {
   const [pigeons, setPigeons] = useState(mockPigeons)
   console.log(pigeons)
+
+  const createPigeon = (pigeon) => {
+    
+  }
+
   return (
     <>
     <h1> LoveBirds </h1>
@@ -22,7 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pigeonindex" element={<PigeonIndex pigeons={pigeons} />} />
-        <Route path="/pigeonnew" element={<PigeonNew />} />
+        <Route path="/pigeonnew" element={<PigeonNew createPigeon={createPigeon} />} />
         <Route path="/pigeonshow/:id" element={<PigeonShow pigeons={pigeons} />} />
         <Route path="/pigeonedit" element={<PigeonEdit />} />
         <Route path="*" element={<NotFound />} />
