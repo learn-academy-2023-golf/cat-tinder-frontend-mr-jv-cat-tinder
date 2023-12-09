@@ -1,6 +1,7 @@
 import React from 'react'
 import pigeons from '../mockPigeons'
-import { Card, CardBody, CardSubtitle, CardTitle, NavLink, Button } from 'reactstrap'
+import { Card, CardBody, CardSubtitle, CardTitle, Button } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
 
 const PigeonIndex = ({ pigeons }) => {
   
@@ -21,11 +22,11 @@ const PigeonIndex = ({ pigeons }) => {
               <CardSubtitle className="mb-2 text-muted" tag="h6">
                 Age: {pigeonObject.age}
               </CardSubtitle>
-                <NavLink to={`/pigeonshow/${pigeonObject.id}`}>
                 <Button>
+                <NavLink to={`/pigeonshow/${pigeonObject.id}`}>
                 Get to know more about me!
-                </Button> 
                 </NavLink>
+                </Button> 
             </CardBody>
           </Card>
         ))}

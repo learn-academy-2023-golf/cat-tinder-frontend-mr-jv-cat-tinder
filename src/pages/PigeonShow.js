@@ -1,11 +1,11 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 
 const PigeonShow = ({pigeons}) => {
-  const {id} = useParams()
+  const { id } = useParams()
     
   let selectedPigeon = pigeons.find(pigeonObject => pigeonObject.id === +id)
-  console.log(selectedPigeon)
+  // console.log(selectedPigeon)
   
   return (
     <div className="show-page">
@@ -14,6 +14,10 @@ const PigeonShow = ({pigeons}) => {
         <h2>I am {selectedPigeon.name}, age {selectedPigeon.age}.</h2>
         <h3> I enjoy {selectedPigeon.enjoys}</h3>
         <img alt={selectedPigeon.name} src={selectedPigeon.image}/>
+
+          <NavLink to={`/pigeonedit/${selectedPigeon.id}`} className="nav-link">
+            Edit LoveBird Profile
+          </NavLink>
       </>
     )}
     </div>
