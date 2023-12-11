@@ -1,11 +1,18 @@
 import React from 'react'
-import { useParams, NavLink } from 'react-router-dom'
+import { useParams, NavLink, useNavigate } from 'react-router-dom'
+import { Button } from "reactstrap"
 
-const PigeonShow = ({pigeons}) => {
+const PigeonShow = ({pigeons, deletePigeon}) => {
   const { id } = useParams()
     
   let selectedPigeon = pigeons.find(pigeonObject => pigeonObject.id === +id)
   
+    const navigate = useNavigate()
+    const handleSubmit = () => {
+      deletePigeon(selectedPigeon.id)
+      navigate("/pigeonindex")
+    }
+
   return (
     <div className="show-page">
       {selectedPigeon && (
@@ -15,7 +22,10 @@ const PigeonShow = ({pigeons}) => {
         <img alt={selectedPigeon.name} src={selectedPigeon.image}/>
 
           <NavLink to={`/pigeonedit/${selectedPigeon.id}`} className="nav-link">
-            Edit LoveBird Profile
+            <Button onClick={handleSubmit}>Edit LoveBird Profile</Button>
+          </NavLink>
+          <NavLink to="/pigeonindex">
+            <Button onClick={handleSubmit} > Delete LoveBird</Button>
           </NavLink>
       </>
     )}

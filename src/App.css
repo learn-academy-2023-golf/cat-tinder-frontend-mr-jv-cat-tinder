@@ -11,10 +11,6 @@
   display: flex;
 }
 
-.index-page {
-  padding-top: 15px;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -56,6 +52,12 @@
   color: gray;
   padding: 20px;
   text-align: center;
+  background-image: 
+    url('https://i1.pickpik.com/photos/547/179/737/times-square-new-york-city-nyc-preview.jpg');
+  background-position: top center, bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .notfoundstyling {
@@ -65,4 +67,17 @@
 
 .notfoundstyling h1 {
   color: gray;
+}
+
+.index-page {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: 
+    url('https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?cs=srgb&dl=pexels-francesco-ungaro-281260.jpg&fm=jpg');
+  background-position: top center, bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }

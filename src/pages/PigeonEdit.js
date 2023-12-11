@@ -8,18 +8,20 @@ const PigeonEdit = ({ pigeons, updatePigeon }) => {
   let currentPigeon = pigeons?.find((pigeon) => pigeon.id === +id)
 
   const navigate = useNavigate()
+  
+
+  const [editPigeon, setEditPigeon] = useState({
+    name: currentPigeon?.name,
+    age: currentPigeon?.age,
+    enjoys: currentPigeon?.enjoys,
+    image: currentPigeon?.image
+  })
+  
   const handleSubmit = () => {
-    updatePigeon(editPigeon, currentPigeon.id)
+    updatePigeon(editPigeon, currentPigeon?.id)
     navigate("/pigeonindex")
   }
 
-  const [editPigeon, setEditPigeon] = useState({
-    name: currentPigeon.name,
-    age: currentPigeon.age,
-    enjoys: currentPigeon.enjoys,
-    image: currentPigeon.image
-  })
-  
   const handleChange = (e) => {
    setEditPigeon({...editPigeon, [e.target.name]: e.target.value})
   }
@@ -72,9 +74,9 @@ const PigeonEdit = ({ pigeons, updatePigeon }) => {
             onChange={handleChange}
           />
         </FormGroup>
-        <Button onClick={handleSubmit}>
+          <Button onClick={handleSubmit}>
           Submit Updated LoveBird
-        </Button>
+          </Button>
       </Form>
     </>
   )
