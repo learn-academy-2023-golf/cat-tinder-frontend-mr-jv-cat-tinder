@@ -5,7 +5,6 @@ const PigeonShow = ({pigeons}) => {
   const { id } = useParams()
     
   let selectedPigeon = pigeons.find(pigeonObject => pigeonObject.id === +id)
-  // console.log(selectedPigeon)
   
   return (
     <div className="show-page">
