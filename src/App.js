@@ -19,6 +19,11 @@ const App = () => {
     
   }
 
+  const updatePigeon = (pigeon, id) => {
+    console.log("pigeon:", pigeon)
+    console.log("id:", id)
+  }
+
   return (
     <>
     <h1> LoveBirds </h1>
@@ -29,7 +34,7 @@ const App = () => {
         <Route path="/pigeonindex" element={<PigeonIndex pigeons={pigeons} />} />
         <Route path="/pigeonnew" element={<PigeonNew createPigeon={createPigeon} />} />
         <Route path="/pigeonshow/:id" element={<PigeonShow pigeons={pigeons} />} />
-        <Route path="/pigeonedit" element={<PigeonEdit />} />
+        <Route path="/pigeonedit/:id" element={<PigeonEdit pigeons={pigeons} updatePigeon={updatePigeon} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
